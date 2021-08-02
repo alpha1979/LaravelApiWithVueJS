@@ -4,16 +4,12 @@
         <h5 class="card-title">Movie Title : {{movie.title}}</h5>
         
         <p class="card-text">Movie Quote: {{movie.quote}}</p>
-        <span data-type="upvote"  class="btn btn-success">
+       
             <upvote-movie :movie="movie.id" />
-            Upvote
-           
-        </span>
-        <span data-type="downvote"  class="btn btn-danger">
-            <downvote-movie :movie="movie.id" />
-            DownVote
             
-        </span>
+           
+            <downvote-movie :movie="movie.id" />
+            
     </div>
 </div>
 </template>

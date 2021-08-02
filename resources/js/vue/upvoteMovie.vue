@@ -2,7 +2,7 @@
 <template>
     <div class="container">
         <p id="success"></p>
-       <a  @click="upVote">{{ totalvote }}</a>
+       <a @click="upVote" class="btn btn-success">Upvote{{ totalvote }}</a>
     </div>
 </template>
  
@@ -18,9 +18,9 @@
             upVote(){
                 axios.post('api/upvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
-                    console.log(response)
+                    // console.log(response)
                     this.getUpvote()
-                    $('#success').html(response.data.message)
+                    
                 })
                 .catch()
             },
