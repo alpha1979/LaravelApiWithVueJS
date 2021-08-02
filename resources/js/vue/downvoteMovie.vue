@@ -16,7 +16,7 @@
         },
         methods:{
             downVote(){
-                axios.post('/downvote/'+this.movie,{movie:this.movie})
+                axios.post('api/downvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
                     this.getDownvote()
                     $('#success').html(response.data.message)
@@ -24,10 +24,10 @@
                 .catch()
             },
             getDownvote(){
-                axios.post('/downvote',{movie:this.movie})
+                axios.post('api/downvote',{movie:this.movie})
                 .then(response =>{
-                    console.log(response.data.data.downvote)
-                    this.totalDownvote = response.data.data.downvote
+                    console.log(response.data.downvote)
+                    this.totalDownvote = response.data.downvote
                 })
             }
         },

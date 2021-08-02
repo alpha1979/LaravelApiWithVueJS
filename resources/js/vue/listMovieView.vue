@@ -7,12 +7,12 @@
         <span data-type="upvote"  class="btn btn-success">
             <upvote-movie :movie="movie.id" />
             Upvote
-            <span>{{movie.upvote}}</span>
+           
         </span>
         <span data-type="downvote"  class="btn btn-danger">
             <downvote-movie :movie="movie.id" />
             DownVote
-            <span>{{movie.downvote}}</span>
+            
         </span>
     </div>
 </div>
@@ -26,23 +26,7 @@ export default {
     props:['movie'],
     
    
-    // methods:{
-       
-    //     updateVote(e){
-             
-    //         this.axios.put('/api/movies',+this.movie.id+"/?/type=",'upvote')
-    //         .then(response =>{
-    //             if(response.status == 200){
-    //                 // this.$emit('listChanged')
-    //                 console.log("success");
-    //             }
-    //         })
-    //         .catch(error =>{
-    //             console.log(error);
-    //         })
-    //     }
-    // }
-    
+
     
     
 }

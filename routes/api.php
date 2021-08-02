@@ -24,9 +24,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('/movies',MovieController::class);
 
-Route::post('/upvote/{id}',[Movie::class,'upvote']);
-Route::post('/downvote/{id}',[Movie::class,'downvote']);
+Route::post('/upvote/{id}',[MovieController::class,'upvote']);
+Route::post('/downvote/{id}',[MovieController::class,'downvote']);
 
 
-Route::post('/upvote',[Movie::class,'getUpvote']);
-Route::post('/downvote',[Movie::class,'getDownvote']);
+Route::post('/upvote',[MovieController::class,'getUpvote']);
+Route::post('/downvote',[MovieController::class,'getDownvote']);

@@ -16,7 +16,7 @@
         },
         methods:{
             upVote(){
-                axios.post('/upvote/'+this.movie,{movie:this.movie})
+                axios.post('api/upvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
                     console.log(response)
                     this.getlike()
@@ -25,10 +25,10 @@
                 .catch()
             },
             getUpvote(){
-                axios.post('/upvote',{movie:this.movie})
+                axios.post('api/upvote',{movie:this.movie})
                 .then(response =>{
-                    console.log(response.data.data.upvote)
-                    this.totalvote = response.data.data.upvote
+                    console.log(response.data.upvote)
+                    this.totalvote = response.data.upvote
                 })
             }
         },
