@@ -57,11 +57,9 @@ Api CRUD functionality (Create / Read / Update / Delete) for MovieController
     </li>
     
     <li>
-    navigation:-
-    - Views: 
-    - Welcome page http://localhost/
-    - click Dashboard for Admin Pannel (need to authenticate using admin credentials)
-    - login to Normal user (need to login using user@gmail.com )
+    api route
+    -  http://localhost:8000/api/movies
+    
 
     </li>
 
