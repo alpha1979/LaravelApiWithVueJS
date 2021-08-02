@@ -18,6 +18,7 @@
             upVote(){
                 axios.post('/api/movies/upvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
+                    console.log(response)
                     this.getlike()
                     $('#success').html(response.data.message)
                 })

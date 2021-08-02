@@ -5,7 +5,7 @@
         
         <p class="card-text">Movie Quote: {{movie.quote}}</p>
         <span data-type="upvote"  class="btn btn-success">
-        <upvote-movie :movie="movie.id" />
+            <upvote-movie :movie="movie.id" />
             Upvote
             <span>{{movie.upvote}}</span>
         </span>

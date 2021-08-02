@@ -84,9 +84,7 @@ class MovieController extends Controller
     public function getUpvote(Request $request)
     {
         $movie = Movie::find($request->movie);
-        return response()->json([
-            'movie'=>$movie,
-        ]);
+        return response()->json(new MovieResource($movie));
     }
  
     public function upvote(Request $request)
@@ -103,9 +101,7 @@ class MovieController extends Controller
     public function getDownvote(Request $request)
     {
         $movie = Movie::find($request->movie);
-        return response()->json([
-            'movie'=>$movie,
-        ]);
+        return response()->json(new MovieResource($movie));
     }
  
     public function downvote(Request $request)
