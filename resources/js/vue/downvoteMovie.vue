@@ -16,7 +16,7 @@
         },
         methods:{
             downVote(){
-                axios.post('/api/movies/downvote/'+this.movie,{movie:this.movie})
+                axios.post('/downvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
                     this.getDownvote()
                     $('#success').html(response.data.message)
@@ -24,7 +24,7 @@
                 .catch()
             },
             getDownvote(){
-                axios.post('/api/movies/downvote/',{movie:this.movie})
+                axios.post('/downvote',{movie:this.movie})
                 .then(response =>{
                     console.log(response.data.data.downvote)
                     this.totalDownvote = response.data.data.downvote
