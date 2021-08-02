@@ -92,8 +92,8 @@ class MovieController extends Controller
     // public function upvote(Request $request)
     // {
     //     $movie = Movie::find($request->movie);
-    //     $value = $movie->like;
-    //     $movie->like = $value+1;
+    //     $value = $movie->upvote;
+    //     $movie->upvote = $value+1;
     //     $movie->save();
     //     return response()->json([
     //         'message'=>'Thanks',
@@ -111,8 +111,8 @@ class MovieController extends Controller
     // public function downvote(Request $request)
     // {
     //     $movie = Movie::find($request->movie);
-    //     $value = $movie->dislike;
-    //     $movie->dislike = $value+1;
+    //     $value = $movie->downvote;
+    //     $movie->downvote = $value+1;
     //     $movie->save();
     //     return response()->json([
     //         'message'=>'Thanks',
