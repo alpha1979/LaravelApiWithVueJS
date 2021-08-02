@@ -23,7 +23,7 @@ import upvoteMovie from './upvoteMovie.vue';
 import downvoteMovie from './downvoteMovie.vue';
 export default {
   components: { upvoteMovie,downvoteMovie },
-    props:['movie'],
+    props:['movie','movie'],
     
    
 

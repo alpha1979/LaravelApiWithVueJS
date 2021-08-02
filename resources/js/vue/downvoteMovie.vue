@@ -2,7 +2,7 @@
 <template>
     <div class="container">
         <p id="success"></p>
-       <a @click.prevent="downVote">{{ totalDownvote }}</a>
+       <a @click="downVote">{{ totalDownvote }}</a>
     </div>
 </template>
  
@@ -27,7 +27,7 @@
                 axios.post('api/downvote',{movie:this.movie})
                 .then(response =>{
                     console.log(response.data.downvote)
-                    this.totalDownvote = response.data.downvote
+                    this.totalDownvote = response.data.downvote;
                 })
             }
         },

@@ -18,7 +18,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movie = Movie::orderBy('upvote','desc')->paginate(10);
+        $movie = Movie::orderBy('upvote','desc')->paginate(5);
         return response()->json(new MovieCollection($movie),Response::HTTP_OK);
     }
 

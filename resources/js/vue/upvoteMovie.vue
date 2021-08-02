@@ -2,7 +2,7 @@
 <template>
     <div class="container">
         <p id="success"></p>
-       <a  @click.prevent="upVote">{{ totalvote }}</a>
+       <a  @click="upVote">{{ totalvote }}</a>
     </div>
 </template>
  
@@ -19,7 +19,7 @@
                 axios.post('api/upvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
                     console.log(response)
-                    this.getlike()
+                    this.getUpvote()
                     $('#success').html(response.data.message)
                 })
                 .catch()
@@ -27,7 +27,7 @@
             getUpvote(){
                 axios.post('api/upvote',{movie:this.movie})
                 .then(response =>{
-                    console.log(response.data.upvote)
+                    // console.log(response.data.upvote)
                     this.totalvote = response.data.upvote
                 })
             }
