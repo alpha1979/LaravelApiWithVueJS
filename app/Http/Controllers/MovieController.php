@@ -54,20 +54,20 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
-    {
-        //
+    // public function update(Request $request, Movie $movie)
+    // {
+    //     //
         
-        if($request->type == 'downvote' ){
-            $movie->downvote +=1;
+    //     if($request->type == 'downvote' ){
+    //         $movie->downvote +=1;
             
-        }else{
-            $movie->upvote +=1;
+    //     }else{
+    //         $movie->upvote +=1;
            
-        }
-        $movie->update();
-        return new MovieResource($movie);
-    }
+    //     }
+    //     $movie->update();
+    //     return new MovieResource($movie);
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -81,42 +81,42 @@ class MovieController extends Controller
          return response()->json(null, Response::HTTP_NO_CONTENT);
     }
 
-    // public function getUpvote(Request $request)
-    // {
-    //     $movie = Movie::find($request->movie);
-    //     return response()->json([
-    //         'movie'=>$movie,
-    //     ]);
-    // }
+    public function getUpvote(Request $request)
+    {
+        $movie = Movie::find($request->movie);
+        return response()->json([
+            'movie'=>$movie,
+        ]);
+    }
  
-    // public function upvote(Request $request)
-    // {
-    //     $movie = Movie::find($request->movie);
-    //     $value = $movie->upvote;
-    //     $movie->upvote = $value+1;
-    //     $movie->save();
-    //     return response()->json([
-    //         'message'=>'Thanks',
-    //     ]);
-    // }    
+    public function upvote(Request $request)
+    {
+        $movie = Movie::find($request->movie);
+        $value = $movie->upvote;
+        $movie->upvote = $value+1;
+        $movie->save();
+        return response()->json([
+            'message'=>'Thanks',
+        ]);
+    }    
  
-    // public function getDownvote(Request $request)
-    // {
-    //     $movie = Movie::find($request->movie);
-    //     return response()->json([
-    //         'movie'=>$movie,
-    //     ]);
-    // }
+    public function getDownvote(Request $request)
+    {
+        $movie = Movie::find($request->movie);
+        return response()->json([
+            'movie'=>$movie,
+        ]);
+    }
  
-    // public function downvote(Request $request)
-    // {
-    //     $movie = Movie::find($request->movie);
-    //     $value = $movie->downvote;
-    //     $movie->downvote = $value+1;
-    //     $movie->save();
-    //     return response()->json([
-    //         'message'=>'Thanks',
-    //     ]);
-    // }
+    public function downvote(Request $request)
+    {
+        $movie = Movie::find($request->movie);
+        $value = $movie->downvote;
+        $movie->downvote = $value+1;
+        $movie->save();
+        return response()->json([
+            'message'=>'Thanks',
+        ]);
+    }
     
 }

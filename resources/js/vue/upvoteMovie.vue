@@ -2,7 +2,7 @@
 <template>
     <div class="container">
         <p id="success"></p>
-       <a href="http://"><font-awesome-icon @click.prevent="upVote" icon="faThumbsUp" />({{ totalvote }})</a>
+       <a  @click.prevent="upVote">{{ totalvote }}</a>
     </div>
 </template>
  

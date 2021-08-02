@@ -16,9 +16,7 @@ Vue.use(VueSweetalert2);
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-// Vue.component('upvote-component', require('./vue/upvoteMovie.vue').default);
- 
-// Vue.component('downvote-component', require('./vue/downvoteMovie.vue'));
+
 
 Vue.use(VueAxios, axios);
 

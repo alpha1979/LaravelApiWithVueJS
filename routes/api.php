@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\VoteController;
+use App\Models\Movie;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/movies',MovieController::class);
+
+
+Route::post('/movies/upvote/{id}',[Movie::class,'upvote']);
+Route::post('/movies/downvote/{id}',[Movie::class,'downvote']);
+
+
+Route::post('/movies/upvote',[Movie::class,'getUpvote']);
+Route::post('/movies/downvote',[Movie::class,'getDownvote']);

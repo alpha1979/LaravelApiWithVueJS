@@ -5,14 +5,12 @@
         
         <p class="card-text">Movie Quote: {{movie.quote}}</p>
         <span data-type="upvote"  class="btn btn-success">
-        <!-- <span data-type="upvote" @click="updateVote()"  class="btn btn-success"> -->
-            <!-- <input type="hidden" :value="upvote"> -->
+        <upvote-movie :movie="movie.id" />
             Upvote
             <span>{{movie.upvote}}</span>
         </span>
         <span data-type="downvote"  class="btn btn-danger">
-        <!-- <span data-type="downvote" @click="updateVote()" class="btn btn-danger"> -->
-            <!-- <input type="hidden" :value="downvote"> -->
+            <downvote-movie :movie="movie.id" />
             DownVote
             <span>{{movie.downvote}}</span>
         </span>
@@ -20,8 +18,13 @@
 </div>
 </template>
 <script>
+
+import upvoteMovie from './upvoteMovie.vue';
+import downvoteMovie from './downvoteMovie.vue';
 export default {
+  components: { upvoteMovie,downvoteMovie },
     props:['movie'],
+    
    
     // methods:{
        
