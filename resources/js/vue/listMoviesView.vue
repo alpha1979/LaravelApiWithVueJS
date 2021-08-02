@@ -3,6 +3,7 @@
     <div v-for="(movie) in movies" :key="movie.id">
         <listMovieView
             :movie="movie"
+            v-on:reloadMoviesView = "$emit('reloadAppView')"
             />
         
     </div>

@@ -11,7 +11,7 @@
             <addMovieForm/>
         
         <div class="row">
-            <listMoviesView :movies="movies"/>
+            <listMoviesView :movies="movies" v-on:reloadAppView="getMovies()" />
         </div>
     </main>
 </div>

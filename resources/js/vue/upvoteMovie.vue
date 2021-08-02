@@ -19,7 +19,11 @@
                 axios.post('api/upvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
                     // console.log(response)
-                    this.getUpvote()
+                    if(response.status == 200 ){
+                        this.getUpvote();
+                        this.$emit('viewChanged');
+                    }
+                    
                     
                 })
                 .catch()

@@ -18,8 +18,10 @@
             downVote(){
                 axios.post('api/downvote/'+this.movie,{movie:this.movie})
                 .then(response =>{
-                    this.getDownvote()
-                    // $('#success').html(response.data.message)
+                   if(response.status == 200 ){
+                        this.getDownvote();
+                        this.$emit('viewChanged');
+                    }
                 })
                 .catch()
             },

@@ -5,10 +5,10 @@
         
         <p class="card-text">Movie Quote: {{movie.quote}}</p>
        
-            <upvote-movie :movie="movie.id" />
+            <upvote-movie :movie="movie.id" v-on:viewChanged = "$emit('reloadMoviesView')" />
             
            
-            <downvote-movie :movie="movie.id" />
+            <downvote-movie :movie="movie.id" v-on:viewChanged = "$emit('reloadMoviesView')" />
             
     </div>
 </div>
