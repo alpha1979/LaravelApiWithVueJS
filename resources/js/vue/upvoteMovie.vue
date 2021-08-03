@@ -26,7 +26,7 @@
                     
                     
                 })
-                .catch()
+                .catch(error=>console.log(error));
             },
             getUpvote(){
                 axios.post('api/upvote',{movie:this.movie})
